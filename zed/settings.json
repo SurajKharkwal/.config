@@ -1,0 +1,191 @@
+{
+  "theme": "Tokyo Night",
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
+  "dev": {
+    // "server_url": "https://staging.zed.dev",
+    // "vertical_scroll_margin": 50
+  },
+
+  "nightly": {
+    "scrollbar": {
+      "show": "never"
+    },
+    "ui_font_size": 13,
+    "buffer_font_size": 13,
+    "buffer_line_height": {
+      "custom": 1.25
+    },
+    "terminal": {
+      "dock": "right",
+      "blinking": "on",
+      "font_size": 13,
+      "line_height": {
+        "custom": 1.25
+      },
+      "env": {
+        "GIT_EDITOR": "zed --wait"
+      }
+    },
+    "inlay_hints": {
+      "enabled": true
+    },
+    "git": {
+      "inline_blame": { "enabled": true }
+    }
+  },
+  "git": {
+    "inline_blame": { "enabled": false }
+  },
+  "soft_wrap": "none",
+  "vim_mode": true,
+  "project_panel": {
+    "dock": "right",
+    "scrollbar": { "show": "never" }
+  },
+  "base_keymap": "VSCode",
+  "indent_guides": {
+    "enabled": false
+  },
+
+  "features": {
+    "inline_completion_provider": "supermaven"
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "checkOnSave": {
+        "allTargets": false
+      },
+      "check": {
+        "allTargets": false,
+        "overrideCommand": ["cargo", "build", "--message-format=json"]
+      }
+    },
+    "gopls": {
+      "initialization_options": {
+        "usePlaceholders": true,
+        // "buildFlags": ["-tags=debug"],
+        "completeUnimported": true,
+        "experimentalPostfixCompletions": true,
+        "hints": {
+          "assignVariableTypes": false,
+          "compositeLiteralFields": false,
+          "compositeLiteralTypes": false,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    }
+    // "tailwindcss-language-server": {
+    //   "binary": {
+    //     // "path": "/Users/thorstenball/bin/gopls",
+    //     "arguments": [
+    //       "/Users/thorstenball/code/clones/tailwindcss-intellisense/packages/tailwindcss-language-server/bin/tailwindcss-language-server",
+    //       "--stdio"
+    //     ]
+    //   },
+    //   "settings": {
+    //     "classAttributes": ["class", "className", "ngClass", "styles"]
+    //   }
+    // }
+  },
+  "languages": {
+    "Scala": {
+      "language_servers": ["tailwindcss-language-server"]
+    },
+    "Markdown": {
+      "preferred_line_length": 80
+    },
+    "SQL": {
+      "formatter": "prettier"
+    },
+    "JSON": {
+      "prettier": {
+        "allowed": true,
+        "parser": "json"
+      }
+    },
+    // "Svelte": {
+    //   "code_actions_on_format": {
+    //     "source.organizeImports": true,
+    //     "source.fixAll.eslint": true
+    //   }
+    // },
+    "TypeScript": {
+      "prettier": {
+        "allowed": true,
+        "parser": "json"
+      },
+
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
+      }
+    },
+    "TSX": {
+      "prettier": {
+        "allowed": true,
+        "parser": "json"
+      },
+
+      "code_actions_on_format": {
+        "source.fixAll": true,
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
+      }
+    },
+    // "Vue.js": {
+    //   "code_actions_on_format": {
+    //     "source.fixAll.eslint": true
+    //   }
+    //   // "formatter": {
+    //   //   "code_actions": {
+    //   //     "source.fixAll.eslint": true
+    //   //   }
+    //   // }
+    // },
+    "JavaScript": {
+      "prettier": {
+        "allowed": true,
+        "parser": "json"
+      },
+
+      // "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    }
+
+    // "Ruby": {
+    //   "language_servers": ["tailwindcss-language-server", "solargraph"],
+    //   "format_on_save": "on",
+    //   "formatter": {
+    //     "external": {
+    //       "command": "bundle",
+    //       "arguments": [
+    //         "exec",
+    //         "rubocop",
+    //         "--fail-level",
+    //         "error",
+    //         "--autocorrect",
+    //         "--stdin",
+    //         "corrected.rb",
+    //         "--stderr"
+    //       ]
+    //     }
+    //   }
+    // }
+  }
+}
